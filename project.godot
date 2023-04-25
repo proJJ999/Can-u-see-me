@@ -22,3 +22,9 @@ window/size/viewport_height=800
 [dotnet]
 
 project/assembly_name="Can U See Me"
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="terrain"
