@@ -1,0 +1,30 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://e1iivb3idd4n"]
+
+[ext_resource type="Texture2D" uid="uid://bt6xcdaykdinb" path="res://assets/tileset_terrain.png" id="1_7x23u"]
+[ext_resource type="PackedScene" uid="uid://boal2n6nso3er" path="res://src/agents/player.tscn" id="2_jgf1e"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71824"]
+texture = ExtResource("1_7x23u")
+texture_region_size = Vector2i(100, 100)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, -50, 50, -50, 50, 50, -50, 50)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34.5, -38, -16.5, -50, 9, -50, 29.5, -40.5, 44, -24, 50, -7, 50, 14, 39.5, 28.5, 25.5, 41, 10, 50, -14, 50, -31, 39.5, -44, 24.5, -50, -1.5, -44, -24)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-50, 50, 50, -50, 50, 50)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qlfhl"]
+scenes/1/scene = ExtResource("2_jgf1e")
+
+[resource]
+tile_size = Vector2i(100, 100)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 0
+sources/3 = SubResource("TileSetAtlasSource_71824")
+sources/4 = SubResource("TileSetScenesCollectionSource_qlfhl")
