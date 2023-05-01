@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://tmaiqm3cacxb"]
+[gd_scene load_steps=3 format=3 uid="uid://tmaiqm3cacxb"]
 
 [ext_resource type="TileSet" uid="uid://e1iivb3idd4n" path="res://assets/level_template.tres" id="1_7rulc"]
+[ext_resource type="PackedScene" uid="uid://qb28j2hx7486" path="res://src/agents/enemy.tscn" id="2_0ivna"]
 
 [node name="level_template" type="Node"]
 
@@ -16,3 +17,6 @@ layer = -1
 offset_right = 800.0
 offset_bottom = 800.0
 color = Color(1, 0.647059, 0.360784, 1)
+
+[node name="Enemy" parent="." instance=ExtResource("2_0ivna")]
+position = Vector2(335, 347)

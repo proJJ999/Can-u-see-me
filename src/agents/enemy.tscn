@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://qb28j2hx7486"]
+
+[ext_resource type="Script" path="res://src/agents/enemy.gd" id="1_t3lfh"]
+[ext_resource type="Texture2D" uid="uid://d4jyxpikeov3d" path="res://assets/enemy.png" id="1_xleer"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gxcf4"]
+radius = 49.0408
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_t3lfh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xleer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gxcf4")
+
+[node name="RayCast2D" type="RayCast2D" parent="." groups=["enemy_rays"]]
+rotation = 0.261799
+target_position = Vector2(0, -300)
+collision_mask = 5
+
+[node name="RayCast2D2" type="RayCast2D" parent="." groups=["enemy_rays"]]
+rotation = 0.174533
+target_position = Vector2(0, -300)
+collision_mask = 5
+
+[node name="RayCast2D3" type="RayCast2D" parent="." groups=["enemy_rays"]]
+rotation = 0.0872665
+target_position = Vector2(0, -300)
+collision_mask = 5
+
+[node name="RayCast2D4" type="RayCast2D" parent="." groups=["enemy_rays"]]
+target_position = Vector2(0, -300)
+collision_mask = 5
+
+[node name="RayCast2D5" type="RayCast2D" parent="." groups=["enemy_rays"]]
+rotation = -0.0872665
+target_position = Vector2(0, -300)
+collision_mask = 5
+
+[node name="RayCast2D6" type="RayCast2D" parent="." groups=["enemy_rays"]]
+rotation = -0.174533
+target_position = Vector2(0, -300)
+collision_mask = 5
+
+[node name="RayCast2D7" type="RayCast2D" parent="." groups=["enemy_rays"]]
+rotation = -0.261799
+target_position = Vector2(0, -300)
+collision_mask = 5
