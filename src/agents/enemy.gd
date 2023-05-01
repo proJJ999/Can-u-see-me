@@ -8,9 +8,11 @@ signal enemy_seen
 var rays : Array[RayCast2D]
 var seen_player : CharacterBody2D
 
+@onready var light: PointLight2D = $PointLight2D
+
 func _ready() -> void:
 	rays = gather_rays()
-	update_watch_distance(rays, watch_distance)
+	update_watch_distance(rays, light, watch_distance)
 
 
 func gather_rays() -> Array[RayCast2D]:
@@ -21,9 +23,17 @@ func gather_rays() -> Array[RayCast2D]:
 	return rays
 
 
-func update_watch_distance(rays: Array[RayCast2D], value: int) -> void:
+func update_watch_distance(
+		rays: Array[RayCast2D],
+		light: PointLight2D,
+		value: int
+		) -> void:
 	for ray in rays:
 		ray.target_position.y = -value
+	# Dependant on the size of the light texture
+	var light_default_range: int = 128
+	var light_scale := float(value)/float(light_default_range)
+	light.scale = Vector2(light_scale, light_scale)
 
 
 func _physics_process(delta: float) -> void:

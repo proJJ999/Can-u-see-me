@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://qb28j2hx7486"]
+[gd_scene load_steps=6 format=3 uid="uid://qb28j2hx7486"]
 
 [ext_resource type="Script" path="res://src/agents/enemy.gd" id="1_t3lfh"]
 [ext_resource type="Texture2D" uid="uid://d4jyxpikeov3d" path="res://assets/enemy.png" id="1_xleer"]
+[ext_resource type="Texture2D" uid="uid://qkf0vivtak2e" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="3_r4qvr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gxcf4"]
 radius = 49.0408
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wnsvc"]
+polygon = PackedVector2Array(13, -53, 25, -48, 35, -41, 43, -30, 48, -18, 49, -6, 47, 7, 44, 15, 42, 19, 37, 26, 34, 29, 29, 33, 24, 37, 14, 41, 7, 42, 0, 43, -9, 42, -16, 40, -23, 37, -29, 33, -34, 29, -40, 22, -43, 18, -47, 7, -49, -5, -48, -13, -47, -19, -44, -27, -42, -31, -36, -39, -33, -42, -25, -48, -18, -51, -14, -53, 0, 7)
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_t3lfh")
@@ -48,3 +52,13 @@ collision_mask = 5
 rotation = -0.261799
 target_position = Vector2(0, -300)
 collision_mask = 5
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(2.4, 2.4)
+color = Color(1, 0, 0, 1)
+shadow_enabled = true
+texture = ExtResource("3_r4qvr")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0, 6)
+occluder = SubResource("OccluderPolygon2D_wnsvc")
